@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+<h1>User Information</h1>
+<div th:each="user : ${users}">
+    <p th:text="'ID: ' + ${user.id} + ', Name: ' + ${user.name} + ', Email: ' + ${user.email}"></p>
+    <div>Products:</div>
+    <ul>
+        <li th:each="product : ${user.products}"
+            th:text="'ID: ' + ${product.id} + ', Name: ' + ${product.name} + ', Price: $' + ${product.price}">
+        </li>
+    </ul>
+</div>
+<a href="../products/">Go to Products</a>
+</body>
+</html>
